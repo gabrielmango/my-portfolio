@@ -9,6 +9,20 @@
     "titulo": "About Me",
     "conteudo": "Data Engineer with 3 years of experience in building robust pipelines. Specialist in ETL, Data Warehousing and cloud solutions."
   },
+  "certificacoes": [
+    {
+      "titulo": "Data Engineer Associate",
+      "empresa": "Databricks",
+      "link": "#",
+      "logo": "databricks.png"
+    },
+    {
+      "titulo": "Professional Data Engineer",
+      "empresa": "Google Cloud",
+      "link": "#",
+      "logo": "google-cloud.png"
+    }
+  ],
   "projetos": [
     {
       "titulo": "ETL Pipeline",

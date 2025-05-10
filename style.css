@@ -45,7 +45,7 @@ nav a:hover {
 }
 
 .hero {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -246,5 +246,43 @@ nav a:hover {
     .hero-foto {
         width: 150px;
         height: 150px;
+    }
+}
+
+/* Certificações Atualizado */
+.certificacao-card {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.certificacao-logo {
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.certificacao-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.certificacao-info {
+    flex: 1;
+}
+
+@media (max-width: 480px) {
+    .certificacao-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .certificacao-logo {
+        width: 120px;
     }
 }

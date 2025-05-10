@@ -71,6 +71,23 @@ function carregarPortfolio(config) {
         </div>
     `).join('');
 
+    const certificacoesContainer = document.getElementById('certificacoes-container');
+    certificacoesContainer.innerHTML = config.certificacoes.map(cert => `
+        <div class="certificacao-card">
+            <div class="certificacao-logo">
+                <img src="assets/certificacoes/${cert.logo}" alt="${cert.empresa}">
+            </div>
+            <div class="certificacao-info">
+                <h3 class="certificacao-titulo">${cert.titulo}</h3>
+                <p class="certificacao-empresa">${cert.empresa}</p>
+                <a href="${cert.link}" class="certificacao-link" target="_blank" rel="noopener">
+                    Ver Credencial
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    `).join('');
+
     // ============= SMOOTH SCROLL =============
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
