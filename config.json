@@ -3,7 +3,8 @@
     "titulo": "Gabriel Mango",
     "subtitulo": "Data Engineer | Databricks | Airflow | Snowflake",
     "imagem_background": "assets/images/image.png",
-    "imagem_perfil": "assets/images/perfil.png"
+    "imagem_perfil": "assets/images/perfil.png",
+    "resume_url": "assets/files/curriculo.pdf"
   },
   "sobre": {
     "titulo": "About Me",

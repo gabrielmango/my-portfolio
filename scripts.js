@@ -19,6 +19,14 @@ function carregarPortfolio(config) {
     document.getElementById('hero-titulo').textContent = config.hero.titulo;
     document.getElementById('hero-subtitulo').textContent = config.hero.subtitulo;
 
+    if(config.hero.resume_url) {
+        const resumeBtn = document.getElementById('hero-resume-btn');
+        resumeBtn.href = config.hero.resume_url;
+        resumeBtn.download = true;
+    } else {
+        document.getElementById('hero-resume-btn').remove();
+    }
+
     // ============= SOBRE SECTION =============
     document.getElementById('sobre-titulo').textContent = config.sobre.titulo;
     document.getElementById('sobre-conteudo').textContent = config.sobre.conteudo;
