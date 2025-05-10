@@ -1,0 +1,54 @@
+{
+  "hero": {
+    "titulo": "Engenheiro de Dados",
+    "subtitulo": "Transformando dados em insights valiosos",
+    "imagem_background": "projetos/background.jpg"
+  },
+  "sobre": {
+    "titulo": "Sobre Mim",
+    "conteudo": "Engenheiro de Dados com X anos de experiência em construção de pipelines robustos. Especialista em ETL, Data Warehousing e soluções cloud."
+  },
+  "projetos": [
+    {
+      "titulo": "ETL Pipeline",
+      "descricao": "Pipeline de dados integrando múltiplas fontes usando Python e Airflow",
+      "tecnologias": ["Python", "Airflow", "PostgreSQL"],
+      "imagem": "projeto1.jpg",
+      "link": "#"
+    },
+    {
+      "titulo": "Data Lake AWS",
+      "descricao": "Arquitetura de Data Lake escalável utilizando S3 e Glue",
+      "tecnologias": ["AWS", "Spark", "Parquet"],
+      "imagem": "projeto2.jpg",
+      "link": "#"
+    }
+  ],
+  "habilidades": [
+    {
+      "nome": "Data Warehousing",
+      "icone": "fas fa-database"
+    },
+    {
+      "nome": "Cloud Computing",
+      "icone": "fas fa-cloud"
+    }
+  ],
+  "contato": [
+    {
+      "tipo": "Email",
+      "icone": "fas fa-envelope",
+      "url": "mailto:gabrielhmango@gmail.com"
+    },
+    {
+      "tipo": "LinkedIn",
+      "icone": "fab fa-linkedin",
+      "url": "https://www.linkedin.com/in/gabrielhmango/"
+    },
+        {
+      "tipo": "YouTube",
+      "icone": "fab fa-youtube",
+      "url": "https://www.youtube.com/@PipelineDeConhecimento"
+    }
+  ]
+}
