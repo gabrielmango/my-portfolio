@@ -7,12 +7,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-
-// Form submission
-const form = document.querySelector('form');
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Aqui você pode adicionar lógica de envio
-    alert('Mensagem enviada com sucesso!');
-    form.reset();
-});
