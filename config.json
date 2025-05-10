@@ -6,23 +6,33 @@
     "imagem_perfil": "assets/images/perfil.png"
   },
   "sobre": {
-    "titulo": "Sobre Mim",
-    "conteudo": "Engenheiro de Dados com X anos de experiência em construção de pipelines robustos. Especialista em ETL, Data Warehousing e soluções cloud."
+    "titulo": "About Me",
+    "conteudo": "Data Engineer with 3 years of experience in building robust pipelines. Specialist in ETL, Data Warehousing and cloud solutions."
   },
   "projetos": [
     {
       "titulo": "ETL Pipeline",
       "descricao": "Pipeline de dados integrando múltiplas fontes usando Python e Airflow",
       "tecnologias": ["Python", "Airflow", "PostgreSQL"],
-      "imagem": "projeto1.jpg",
-      "link": "#"
+      "imagem": "assets/projetos/projeto_1.png",
+      "repo_url": "https://github.com/seu-usuario/repositorio1",
+      "project_url": "https://exemplo.com/projeto1"
     },
     {
-      "titulo": "Data Lake AWS",
-      "descricao": "Arquitetura de Data Lake escalável utilizando S3 e Glue",
-      "tecnologias": ["AWS", "Spark", "Parquet"],
-      "imagem": "projeto2.jpg",
-      "link": "#"
+      "titulo": "ETL Pipeline",
+      "descricao": "Pipeline de dados integrando múltiplas fontes usando Python e Airflow",
+      "tecnologias": ["Python", "Airflow", "PostgreSQL"],
+      "imagem": "assets/projetos/projeto_1.png",
+      "repo_url": "https://github.com/seu-usuario/repositorio1",
+      "project_url": "https://exemplo.com/projeto1"
+    },
+    {
+      "titulo": "ETL Pipeline",
+      "descricao": "Pipeline de dados integrando múltiplas fontes usando Python e Airflow",
+      "tecnologias": ["Python", "Airflow", "PostgreSQL"],
+      "imagem": "assets/projetos/projeto_1.png",
+      "repo_url": "https://github.com/seu-usuario/repositorio1",
+      "project_url": "https://exemplo.com/projeto1"
     }
   ],
   "habilidades": [

@@ -11,7 +11,6 @@ function carregarPortfolio(config) {
     heroSection.style.backgroundImage = 
         `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${config.hero.imagem_background})`;
 
-    // Carrega foto de perfil
     const heroFoto = document.getElementById('hero-foto');
     if(config.hero.imagem_perfil) {
         heroFoto.innerHTML = `<img src="${config.hero.imagem_perfil}" alt="Foto de Perfil">`;
@@ -28,13 +27,29 @@ function carregarPortfolio(config) {
     const projetosContainer = document.getElementById('projetos-container');
     projetosContainer.innerHTML = config.projetos.map(projeto => `
         <div class="projeto-card">
-            <img src="projetos/${projeto.imagem}" alt="${projeto.titulo}">
-            <h3>${projeto.titulo}</h3>
-            <p>${projeto.descricao}</p>
-            <div class="tecnologias">
-                ${projeto.tecnologias.map(tech => `<span>${tech}</span>`).join('')}
+            <div class="projeto-imagem-container">
+                <img src="${projeto.imagem}" alt="${projeto.titulo}">
             </div>
-            <a href="${projeto.link}" class="btn" target="_blank">Ver Detalhes</a>
+            <div class="projeto-conteudo">
+                <h3>${projeto.titulo}</h3>
+                <p>${projeto.descricao}</p>
+                <div class="tecnologias">
+                    ${projeto.tecnologias.map(tech => `<span>${tech}</span>`).join('')}
+                </div>
+                <div class="projeto-links">
+                    ${projeto.repo_url ? `
+                        <a href="${projeto.repo_url}" class="btn btn-repo" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i> Repositório
+                        </a>
+                    ` : ''}
+                    
+                    ${projeto.project_url ? `
+                        <a href="${projeto.project_url}" class="btn btn-project" target="_blank" rel="noopener">
+                            <i class="fas fa-external-link-alt"></i> Ver Projeto
+                        </a>
+                    ` : ''}
+                </div>
+            </div>
         </div>
     `).join('');
 
@@ -52,7 +67,7 @@ function carregarPortfolio(config) {
     contatoContainer.innerHTML = config.contato.map(contato => `
         <div class="contato-item">
             <i class="${contato.icone}"></i>
-            <a href="${contato.url}" target="_blank">${contato.tipo}</a>
+            <a href="${contato.url}" target="_blank" rel="noopener">${contato.tipo}</a>
         </div>
     `).join('');
 
