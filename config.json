@@ -1,8 +1,9 @@
 {
   "hero": {
-    "titulo": "Engenheiro de Dados",
-    "subtitulo": "Transformando dados em insights valiosos",
-    "imagem_background": "projetos/background.jpg"
+    "titulo": "Gabriel Mango",
+    "subtitulo": "Data Engineer | Databricks | Airflow | Snowflake",
+    "imagem_background": "assets/images/image.png",
+    "imagem_perfil": "assets/images/perfil.png"
   },
   "sobre": {
     "titulo": "Sobre Mim",
@@ -45,7 +46,12 @@
       "icone": "fab fa-linkedin",
       "url": "https://www.linkedin.com/in/gabrielhmango/"
     },
-        {
+    {
+      "tipo": "GitHub",
+      "icone": "fab fa-github",
+      "url": "https://github.com/gabrielmango"
+    },
+    {
       "tipo": "YouTube",
       "icone": "fab fa-youtube",
       "url": "https://www.youtube.com/@PipelineDeConhecimento"

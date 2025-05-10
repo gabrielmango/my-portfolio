@@ -6,61 +6,67 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function carregarPortfolio(config) {
-    // Hero Section
-    document.getElementById('hero-titulo').textContent = config.hero.titulo;
-    document.getElementById('hero-subtitulo').textContent = config.hero.subtitulo;
-    document.querySelector('.hero').style.backgroundImage = 
+    // ============= HERO SECTION =============
+    const heroSection = document.querySelector('.hero');
+    heroSection.style.backgroundImage = 
         `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${config.hero.imagem_background})`;
 
-    // Sobre Section
+    // Carrega foto de perfil
+    const heroFoto = document.getElementById('hero-foto');
+    if(config.hero.imagem_perfil) {
+        heroFoto.innerHTML = `<img src="${config.hero.imagem_perfil}" alt="Foto de Perfil">`;
+    }
+
+    document.getElementById('hero-titulo').textContent = config.hero.titulo;
+    document.getElementById('hero-subtitulo').textContent = config.hero.subtitulo;
+
+    // ============= SOBRE SECTION =============
     document.getElementById('sobre-titulo').textContent = config.sobre.titulo;
     document.getElementById('sobre-conteudo').textContent = config.sobre.conteudo;
 
-    // Projetos
+    // ============= PROJETOS SECTION =============
     const projetosContainer = document.getElementById('projetos-container');
-    config.projetos.forEach(projeto => {
-        projetosContainer.innerHTML += `
-            <div class="projeto-card">
-                <img src="projetos/${projeto.imagem}" alt="${projeto.titulo}">
-                <h3>${projeto.titulo}</h3>
-                <p>${projeto.descricao}</p>
-                <div class="tecnologias">
-                    ${projeto.tecnologias.map(tech => `<span>${tech}</span>`).join('')}
-                </div>
-                <a href="${projeto.link}" class="btn">Ver Detalhes</a>
+    projetosContainer.innerHTML = config.projetos.map(projeto => `
+        <div class="projeto-card">
+            <img src="projetos/${projeto.imagem}" alt="${projeto.titulo}">
+            <h3>${projeto.titulo}</h3>
+            <p>${projeto.descricao}</p>
+            <div class="tecnologias">
+                ${projeto.tecnologias.map(tech => `<span>${tech}</span>`).join('')}
             </div>
-        `;
-    });
+            <a href="${projeto.link}" class="btn" target="_blank">Ver Detalhes</a>
+        </div>
+    `).join('');
 
-    // Habilidades
+    // ============= HABILIDADES SECTION =============
     const habilidadesContainer = document.getElementById('habilidades-container');
-    config.habilidades.forEach(habilidade => {
-        habilidadesContainer.innerHTML += `
-            <div class="habilidade">
-                <i class="${habilidade.icone}"></i>
-                <h3>${habilidade.nome}</h3>
-            </div>
-        `;
-    });
+    habilidadesContainer.innerHTML = config.habilidades.map(habilidade => `
+        <div class="habilidade">
+            <i class="${habilidade.icone}"></i>
+            <h3>${habilidade.nome}</h3>
+        </div>
+    `).join('');
 
-    // Contato
+    // ============= CONTATO SECTION =============
     const contatoContainer = document.getElementById('contato-container');
-    config.contato.forEach(contato => {
-        contatoContainer.innerHTML += `
-            <div class="contato-item">
-                <i class="${contato.icone}"></i>
-                <a href="${contato.url}" target="_blank">${contato.tipo}</a>
-            </div>
-        `;
-    });
+    contatoContainer.innerHTML = config.contato.map(contato => `
+        <div class="contato-item">
+            <i class="${contato.icone}"></i>
+            <a href="${contato.url}" target="_blank">${contato.tipo}</a>
+        </div>
+    `).join('');
 
-    // Smooth Scroll
+    // ============= SMOOTH SCROLL =============
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
     });
 }
