@@ -74,6 +74,8 @@ header {
     display: none;
     cursor: pointer;
     padding: 0.5rem;
+    background: transparent;
+    border: none;
 }
 
 .bar {
@@ -197,7 +199,6 @@ header {
     padding: 1.5rem;
 }
 
-/* BOTÕES DOS PROJETOS (RESTAURADOS) */
 .projeto-links {
     display: flex;
     gap: 1rem;
@@ -309,7 +310,7 @@ header {
     margin-bottom: 1rem;
 }
 
-/* ========= CONTATO (ÍCONES AUMENTADOS) ========= */
+/* ========= CONTATO ========= */
 .contato-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -330,7 +331,7 @@ header {
 }
 
 .contato-item i {
-    font-size: 3.5rem; /* Tamanho aumentado */
+    font-size: 3.5rem;
     color: var(--primary-color);
     margin-bottom: 1.5rem;
     transition: all 0.3s;
@@ -355,23 +356,49 @@ header {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
+        z-index: 1001;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 
     .nav-links {
         position: fixed;
-        top: var(--nav-height);
+        top: 0;
         right: -100%;
-        width: 100%;
-        height: calc(100vh - var(--nav-height));
+        width: 70%;
+        height: 100vh;
         background: var(--primary-color);
         flex-direction: column;
-        align-items: center;
-        padding: 2rem;
-        transition: right 0.3s ease;
+        align-items: flex-start;
+        padding: 7rem 2rem;
+        transition: right 0.5s ease-in-out;
+        z-index: 1000;
     }
 
     .nav-links.active {
         right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 1rem;
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .hero-content {
@@ -398,6 +425,15 @@ header {
 @media (max-width: 480px) {
     html {
         font-size: 14px;
+    }
+
+    .nav-links {
+        width: 100%;
+        padding: 7rem 1.5rem;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
     }
 
     .hero {
