@@ -135,10 +135,10 @@ function carregarPortfolio(config) {
     if (config.contato) {
         const contatoContainer = document.getElementById('contato-container');
         contatoContainer.innerHTML = config.contato.map(contato => `
-            <div class="contato-item">
+            <a href="${contato.url}" class="contato-item" target="_blank" rel="noopener" aria-label="${contato.tipo}">
                 <i class="${contato.icone}"></i>
-                <a href="${contato.url}" target="_blank" rel="noopener">${contato.tipo}</a>
-            </div>
+                <span>${contato.tipo}</span>
+            </a>
         `).join('');
     }
 

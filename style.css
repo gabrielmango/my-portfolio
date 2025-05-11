@@ -323,11 +323,16 @@ header {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    transition: all 0.3s;
+    display: block; /* Transforma em elemento de bloco clicável */
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .contato-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
 .contato-item i {
@@ -335,6 +340,7 @@ header {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
     transition: all 0.3s;
+    pointer-events: none; /* Impede que o ícone bloqueie o clique */
 }
 
 .contato-item:hover i {
@@ -342,14 +348,10 @@ header {
     transform: scale(1.1);
 }
 
-.contato-item a {
-    color: var(--primary-color);
-    text-decoration: none;
+.contato-item span {
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+    display: block;
+    pointer-events: none; /* Mantém consistência no clique */
 }
 
 /* ========= RESPONSIVIDADE ========= */
